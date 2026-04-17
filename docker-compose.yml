@@ -25,7 +25,6 @@ services:
       - rec-network
 
   # 3. ElasticSearch (搜索服务器)
-  # 严厉警告：必须使用 5.6.x，否则你文档后续的 elasticsearch-spark 代码将全部崩溃
   elasticsearch:
     image: elasticsearch:5.6.16
     container_name: rec-elasticsearch
@@ -38,7 +37,7 @@ services:
       - "xpack.security.enabled=false"
     ports:
       - "9200:9200" 
-      - "9300:9300" # Spark TCP 通信端口，极其重要
+      - "9300:9300" # Spark TCP 通信端口
     networks:
       - rec-network
 
