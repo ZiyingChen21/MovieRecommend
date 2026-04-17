@@ -1,0 +1,38 @@
+# Spring Boot 统一综合配置文件 (application.yml)
+# 替代了以前的 xml, properties 和 log 配置
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/recommend
+      auto-index-creation: true
+
+  redis:
+    host: localhost
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      # 键和值的序列化器，统一转成字符串发送给 Spark Streaming
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+# 4. Elasticsearch 配置 (因为老版 ES 5.6 不支持新版 Spring Data 自动配置，采用自定义属性)
+# 对应 docker-compose 中的 ES 节点
+es:
+  host: localhost
+  port: 9300  # 注意：Java 客户端通过 TCP 连接 ES 5.x 必须用 9300 端口，不能用 9200
+  cluster: elasticsearch
+
+
+logging:
+  level:
+    root: INFO
+    com.cc: DEBUG
+  file:
+    name: D:/gitClone/MovieRecommend/logs/movie-rec.log

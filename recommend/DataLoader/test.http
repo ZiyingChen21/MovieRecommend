@@ -1,0 +1,10 @@
+POST http://localhost:9200/recommend/movie/_search?pretty
+Content-Type: application/json
+
+{
+  "query": {
+    "exists": {
+      "field": "tags"
+    }
+  }
+}

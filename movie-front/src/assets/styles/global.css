@@ -1,0 +1,24 @@
+/* 定义根目录的全局变量 */
+:root {
+  --app-padding: 20px;
+  --movie-card-width: 140px;
+  --movie-card-height: 210px;
+}
+
+/* 当屏幕宽度大于 1200px (普通外接显示器) */
+@media (min-width: 1200px) {
+  :root {
+    --app-padding: 40px;
+    --movie-card-width: 180px;
+    --movie-card-height: 270px;
+  }
+}
+
+/* 当屏幕宽度大于 1900px (4K外接显示器) */
+@media (min-width: 1900px) {
+  :root {
+    --app-padding: 60px;
+    --movie-card-width: 220px;
+    --movie-card-height: 330px;
+  }
+}
