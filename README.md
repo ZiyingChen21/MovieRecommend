@@ -52,6 +52,7 @@ MovieRecommend/
 * MongoDB (默认端口: 27017)
 * Kafka & Zookeeper (实时推荐模块需要)
 * Hadoop / Spark 运行环境配置完毕 (SPARK_HOME)
+* (可选) Install DockerDesktop -> VSCode -> Terminal -> docker-compose up -d (根据 docker-compose.yml 文件拉取镜像并启动所有服务（后台运行）)
 
 ### 2. 初始化数据
 将 `/recommend/DataLoader/src/main/resources` 目录下的电影与评分基础数据集导入 MongoDB。
