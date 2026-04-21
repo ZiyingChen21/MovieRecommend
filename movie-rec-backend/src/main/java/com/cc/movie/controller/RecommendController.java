@@ -93,7 +93,7 @@ public class RecommendController {
         int targetSize = 12;
         List<Recommendation> finalRecs = new ArrayList<>();
 
-        // 用于去重的 Set + 防止自己推自己
+        // 用于去重的 Set + exit防止自己推自己
         Set<Integer> existMids = new HashSet<>();
         existMids.add(mid);
 

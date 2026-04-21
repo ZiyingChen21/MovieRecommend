@@ -5,12 +5,13 @@ echo ===================================================
 echo 开始提交 Spark ALSParameter 更新任务：%date% %time%
 echo ===================================================
 
-spark-submit ^
-  --master local[*] ^
-  --class com.cc.ALSParameterModel ^
-  --driver-memory 4g ^
-  --executor-memory 4g ^
-  D:\gitClone\MovieRecommend\movie-rec-backend\jars\OfflineLFMRecommend-1.0-SNAPSHOT.jar
+set "SPARK_BIN=D:\tool\env\spark2.1.1\spark-2.1.1-bin-hadoop2.7\bin\spark-submit.cmd"
+
+set "MAIN_CLASS=com.cc.ALSParameterModel"
+
+set "APP_JAR=D:\gitClone\MovieRecommend\movie-rec-backend\jars\OfflineLFMRecommend-1.0-SNAPSHOT.jar"
+
+spark-submit --master local[*] --class %MAIN_CLASS% --driver-memory 4g --executor-memory 4g %APP_JAR%
 
 
 if %ERRORLEVEL% EQU 0 (
