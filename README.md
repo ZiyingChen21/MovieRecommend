@@ -68,7 +68,7 @@ mvn clean package
 ```
 
 #### 步骤 2：启动 Spring Boot 后端服务
-运行 `movie-rec-backend` 中的 `Application.java`。
+运行 `movie-rec-backend` 中的 `RecommendApplication.java`。
 系统启动时将自动检测并调度大数据的离线基础推荐任务。
 
 #### 步骤 3：启动前端
